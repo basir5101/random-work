@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h3 id="doSomething">Do these when you have nothing to do</h3>
+    <h3 id="doSomething">Do these 10 things when you have nothing to do</h3>
     <ol id="list">
         
     </ol>
@@ -24,11 +24,13 @@
             li.innerText = info.activity;
             list.appendChild(li);
             const lis = document.getElementsByTagName('li');
-            const count = lis.length;
+            const count = lis.length; 
+            if (count > 10){
+                li.style.display = 'none';
+            }
         }
         
-        setInterval(doSomething, 3000);
-
+        setInterval(doSomething, 1000);
         
 
 
