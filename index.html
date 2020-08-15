@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>do something</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h3 id="doSomething">Do these when you have nothing to do</h3>
+    <ol id="list">
+        
+    </ol>
+    <script>
+        function doSomething(){
+            fetch('https://www.boredapi.com/api/activity/')
+            .then( res => res.json())
+            .then( data => activity(data));
+        }
+        
+
+        function activity(info){
+            const li = document.createElement('li');
+            li.innerText = info.activity;
+            list.appendChild(li);
+            const lis = document.getElementsByTagName('li');
+            const count = lis.length;
+        }
+        
+        setInterval(doSomething, 3000);
+
+        
+
+
+       
+    </script>
+</body>
+</html>
